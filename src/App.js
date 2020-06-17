@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import './App.css'
+import MessageError from '../src/components/MessageError'
+import Message from '../src/components/Message'
 
 function App() {
+  const message = {
+    type: 'info',
+    text: 'Time-saving update',
+    icon: 'info',
+    iconText: 'Info',
+  }
+
+  const messageError = {
+    type: 'error',
+    text: 'Password is not valid',
+    icon: 'warning',
+    iconText: 'Error',
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      {/* <Message message={message} /> */}
+      <Message {...message} />
+      <MessageError {...messageError} />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
